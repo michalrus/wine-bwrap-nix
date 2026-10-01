@@ -2,7 +2,7 @@
   lib,
   pkgs,
 }: let
-  wine = pkgs.wineWowPackages.stable;
+  wine = pkgs.wineWow64Packages.stable;
   inherit (pkgs) winetricks;
   ntlm_auth = pkgs.samba;
   getWineAddonVersion = defineName: fileName: let
@@ -22,7 +22,7 @@
   wineMonoDir = pkgs.fetchzip {
     name = "wine-mono-${wineMonoVersion}";
     url = "https://dl.winehq.org/wine/wine-mono/${wineMonoVersion}/wine-mono-${wineMonoVersion}-x86.tar.xz";
-    hash = "sha256-0TFqmaFbSU0dXUpUhIzWUqhr0DPxh321marRKKM8nws=";
+    hash = "sha256-LL6ztAz+TrWp73sr+PZ94pKYTqRMEa3ULkgnEzA1C2M=";
   };
   wineGeckoDir32 = pkgs.fetchzip {
     name = "wine-gecko-${wineGeckoVersion}-x86";
